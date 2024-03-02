@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="icon" href="img/target.ico" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <title>Pago</title>
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-center mb-4">
+            <h2>FORMA DE PAGO</h2>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="contenedor position-relative">
+              <img src="img/tarjeta.png" alt="tarjeta" class="img-fluid" />
+              <div id="datosIngresados" class="texto-superpuesto"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form id="formulario-pago" method="post">
+            <div class="form-group">
+              <label for="cardholderName">Nombre del titular de la tarjeta :</label>
+              <input type="text" name="Nombre de titular" id="cardholderName" class="form-control" title="Ingrese solo letras en mayúscula" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]+" required />
+            </div>
+            <div class="form-group">
+              <label for="cardNumber">Número de Tarjeta :</label>
+              <input type="text" name="Número de tarjeta" id="cardNumber" class="form-control" required pattern="[0-9]+" title="Por favor ingresa solo números" maxlength="29" />
+            </div>
+            <div class="form-group">
+              <label for="expiryDate">Fecha de Vencimiento :</label>
+              <input type="date" name="Fecha de Vencimiento" id="expiryDate" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV :</label>
+              <input type="text" name="CVV" id="cvv" class="form-control" maxlength="10" required pattern="[0-9]+" />
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="ageCheck" name="ageCheck" required />
+              <label class="form-check-label" for="ageCheck">Confirmo que soy mayor de 18 años</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="privacyCheck" name="privacyCheck" required />
+              <label class="form-check-label" for="privacyCheck">He leído y acepto los términos de privacidad de datos</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Realizar Pago</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/material.min.js"></script>
+    <script src="js/datos_simultaneos_targeta.js"></script>
+    <script src="js/insertardatos_targeta.js"></script>
+  </body>
+</html>
